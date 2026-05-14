@@ -1,0 +1,1 @@
+// Handles background browser events for the extension
