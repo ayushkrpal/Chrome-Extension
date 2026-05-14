@@ -1,33 +1,62 @@
-# Your Project Name
+# AZ Problem Tracker
 
-Short one-line description of what the extension does.
+AZ Problem Tracker is a Chrome extension that helps users bookmark and manage coding problems directly from the MAANG/AZ platform. It provides a simple and efficient way to save problems for later practice and improve coding workflow.
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+* Bookmark coding problems directly from problem pages
+* Persistent bookmark storage using Chrome Storage API
+* Quick-access popup dashboard for viewing saved problems
+* Open saved problems instantly in a new tab
+* Remove bookmarks easily from the popup interface
 
 ## Tech Stack
 
-HTML  
-CSS  
-JavaScript  
+HTML
+CSS
+JavaScript
 Chrome Extension API
 
-## Setup
+## Installation
 
 1. Clone the repository
-2. Open Chrome and go to:
-   chrome://extensions/
-3. Enable Developer Mode
-4. Click "Load Unpacked"
+
+```bash
+git clone https://github.com/ayushkrpal27/az-problem-tracker.git
+```
+
+2. Open Chrome and navigate to:
+
+```text
+chrome://extensions/
+```
+
+3. Enable **Developer Mode**
+
+4. Click **Load Unpacked**
+
 5. Select the project folder
 
-## Usage
+## Project Structure
 
-Briefly explain how to use the extension.
+```text
+├── assets/
+├── background.js
+├── content.js
+├── popup.html
+├── popup.css
+├── popup.js
+├── manifest.json
+└── README.md
+```
+
+## Future Improvements
+
+* Search and filter bookmarks
+* Categorize problems by topic or difficulty
+* Sync bookmarks across devices
+* Add dark mode support
 
 ## License
 
-MIT
+MIT License

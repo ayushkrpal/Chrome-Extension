@@ -1,13 +1,6 @@
-# macOS system files
-**/.DS_Store
-
-# Log files
-*.log
-
-# Build output 
+node_modules/
+.env
+.DS_Store
 dist/
 build/
-
-# Environment files
-.env
-.env.local
+*.log
