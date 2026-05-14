@@ -1,4 +1,5 @@
 const bookmarkImgURL = chrome.runtime.getURL("assets/bookmark.png");
+
 const AZ_PROBLEM_KEY = "AZ_PROBLEM_KEY";
 
 const observer = new MutationObserver(() => {
@@ -25,26 +26,35 @@ function addBookmarkButton() {
         return;
     }
 
-    const heading = document.querySelector("h1");
+    const topBarButtons = document.querySelectorAll("button");
 
-    if (!heading || !heading.parentElement) {
+    if (!topBarButtons.length) {
+        return;
+    }
+
+    const targetButton = topBarButtons[1];
+
+    if (!targetButton || !targetButton.parentElement) {
         return;
     }
 
     const bookmarkButton = document.createElement("img");
 
     bookmarkButton.id = "add-bookmark-button";
+
     bookmarkButton.src = bookmarkImgURL;
 
-    bookmarkButton.style.height = "32px";
-    bookmarkButton.style.width = "32px";
+    bookmarkButton.style.height = "28px";
+    bookmarkButton.style.width = "28px";
     bookmarkButton.style.cursor = "pointer";
     bookmarkButton.style.marginLeft = "12px";
-    bookmarkButton.style.verticalAlign = "middle";
 
-    heading.parentElement.appendChild(bookmarkButton);
+    targetButton.parentElement.appendChild(bookmarkButton);
 
-    bookmarkButton.addEventListener("click", addNewBookmarkHandler);
+    bookmarkButton.addEventListener(
+        "click",
+        addNewBookmarkHandler
+    );
 }
 
 async function addNewBookmarkHandler() {
@@ -55,7 +65,7 @@ async function addNewBookmarkHandler() {
     const uniqueId = extractUniqueId(azProblemUrl);
 
     const problemName =
-        document.querySelector("h1")?.innerText || "Problem";
+        document.title || "Problem";
 
     const alreadyBookmarked = currentBookmarks.some(
         (bookmark) => bookmark.id === uniqueId
@@ -81,7 +91,7 @@ async function addNewBookmarkHandler() {
             [AZ_PROBLEM_KEY]: updatedBookmarks
         },
         () => {
-            console.log("Bookmarks updated successfully");
+            console.log("Bookmark added");
         }
     );
 }
