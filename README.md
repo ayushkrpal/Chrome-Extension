@@ -22,7 +22,7 @@ Chrome Extension API
 1. Clone the repository
 
 ```bash
-git clone https://github.com/ayushkrpal27/az-problem-tracker.git
+git clone https://github.com/ayushkrpal/Chrome-Extension.git
 ```
 
 2. Open Chrome and navigate to:
